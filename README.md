@@ -53,7 +53,7 @@
 1. 회원가입
 
 - `POST` http://localhost:8000/auth/signup
-- Request fields : email
+- Request fields : email(이메일), pw(비밀번호), comparePw(비밀번호 확인)
 
 2. 로그인
 
