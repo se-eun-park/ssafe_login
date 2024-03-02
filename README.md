@@ -14,7 +14,7 @@
 
 ## 제출 방법
 
-[GitHub - SSA-FE/ssafe_signup](https://github.com/SSA-FE/ssafe_signup)
+[GitHub - SSA-FE/ssafe_login](https://github.com/SSA-FE/ssafe_login)
 
 1. 위 레포를 자신의 레포지토리로 fork해 갑니다.
 2. 이슈단위로 브랜치를 나누어 작업합니다.
