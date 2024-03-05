@@ -6,7 +6,10 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
 
   resolve: {
-    alias: [{ find: '@pages', replacement: './pages' }],
+    alias: [
+      { find: '@pages', replacement: '/src/pages' },
+      { find: '@', replacement: '/src' },
+    ],
   },
 
   server: {
