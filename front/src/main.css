@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .labelText {
+    @apply font-noto-sans-kr text-lg font-bold text-[#4B5563] ml-5 mb-2;
+  }
+
+  .inputField {
+    @apply w-96 h-14 border-[3px] border-[#DADADA] rounded-full px-5 text-[#8a8a8a] text-base caret-[#a2afc0] focus:outline-none focus:border-[#6ED1F9];
+  }
+
+  .errorMessage {
+    @apply font-noto-sans-kr text-base text-[#F93F3F] ml-5 mt-2 font-medium;
+  }
+}
