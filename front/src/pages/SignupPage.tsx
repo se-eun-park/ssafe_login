@@ -13,7 +13,7 @@ const SignupPage = () => {
 
   const {
     register,
-    formState: { errors },
+    formState: { errors, isSubmitting, isValid },
     handleSubmit,
     getValues,
   } = useForm<FormInputs>({ mode: 'onChange' });
@@ -97,7 +97,8 @@ const SignupPage = () => {
           </div>
           <button
             type="submit"
-            className="transition-all bg-[#6ED1F9] w-96 h-14 mb-6 text-2xl font-noto-sans-kr text-white rounded-full hover:bg-white border-[3px] border-[#6ED1F9] hover:text-[#6ED1F9]"
+            disabled={!isValid || isSubmitting}
+            className="transition-all bg-[#6ED1F9] w-96 h-14 mb-6 text-2xl font-noto-sans-kr text-white rounded-full hover:bg-white border-[3px] border-[#6ED1F9] hover:text-[#6ED1F9] disabled:bg-[#DADADA] disabled:text-[#fff] disabled:border-[#DADADA]"
           >
             회원가입
           </button>

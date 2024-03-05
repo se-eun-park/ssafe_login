@@ -12,6 +12,6 @@
   }
 
   .errorMessage {
-    @apply font-noto-sans-kr text-base text-[#F93F3F] ml-5 mt-2 font-medium;
+    @apply font-noto-sans-kr text-[0.8rem] text-[#F93F3F] ml-5 mt-2 font-medium;
   }
 }
