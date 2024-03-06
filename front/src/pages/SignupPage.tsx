@@ -23,8 +23,8 @@ const SignupPage = () => {
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#])[\da-zA-Z!@#]{8,16}$/;
 
-  const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    const response = axios.post('http://localhost:8000/auth/signup', {
+  const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+    const response = await axios.post('http://localhost:8000/auth/signup', {
       email: data.email,
       pw: data.password,
       comparePw: data.passwordCheck,
