@@ -22,8 +22,8 @@ const SigninPage = () => {
       data: user,
     };
     const { data } = await AxiosCookie(config);
-    setCookie('accessToken', data.token);
-    setCookie('refreshToken', data.token);
+    setCookie('accessToken', data.accessToken);
+    setCookie('refreshToken', data.refreshToken);
 
     navigate('/');
   };
