@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
@@ -23,7 +24,14 @@ const SignupPage = () => {
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#])[\da-zA-Z!@#]{8,16}$/;
 
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    alert(`Email : ${data.email} \nPW : ${data.password}`);
+    const response = axios.post('http://localhost:8000/auth/signup', {
+      email: data.email,
+      pw: data.password,
+      comparePw: data.passwordCheck,
+    });
+    console.log(response);
+
+    alert('회원가입 성공!');
     navigate('/');
   };
 
