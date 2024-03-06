@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import AxiosCookie from '@common/AxiosCookie';
 import { removeCookie, setCookie } from '@common/Cookie';
+import { useNavigate } from 'react-router-dom';
 
 const SigninPage = () => {
   const [user, setUser] = useState({ email: '', pw: '' });
+  const navigate = useNavigate();
 
-  /** Get User Login Info */
-  const onChange = async (event: any) => {
+  const onChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUser({
       ...user,
@@ -14,7 +15,6 @@ const SigninPage = () => {
     });
   };
 
-  /** Get Login Response from Server */
   const clickBtnLogin = async () => {
     const config = {
       method: 'post',
@@ -23,11 +23,15 @@ const SigninPage = () => {
     };
     const { data } = await AxiosCookie(config);
     setCookie('accessToken', data.token);
+    setCookie('refreshToken', data.token);
   };
 
   /** Logout */
   const clickBtnLogout = async () => {
+    removeCookie('refreshToken');
     removeCookie('accessToken');
+    navigate('/');
+    window.location.reload();
   };
 
   return (

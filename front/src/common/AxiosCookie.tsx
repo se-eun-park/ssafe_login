@@ -3,6 +3,6 @@ import { getCookie } from './Cookie';
 
 export default axios.create({
   headers: {
-    accessToken: await `Bearer ${getCookie('accessToken')}`,
+    accessToken: `Bearer ${getCookie('accessToken')}`,
   },
 });
