@@ -32,7 +32,7 @@ const SignupPage = () => {
     console.log(response);
 
     alert('회원가입 성공!');
-    navigate('/');
+    navigate('/signin');
   };
 
   return (
