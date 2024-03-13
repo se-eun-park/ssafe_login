@@ -12,15 +12,18 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col w-full h-screen justify-center items-center">
-      <Link to="signup">
+      <Link to="/signup">
         <button className="button">회원가입</button>
       </Link>
-      <Link to="signin">
+      <Link to="/signin">
         <button className="button">로그인</button>
       </Link>
       <button className="button" onClick={clickBtnLogout}>
         로그아웃
       </button>
+      <Link to="/form">
+        <button className="button">폼 작성하기</button>
+      </Link>
     </div>
   );
 };

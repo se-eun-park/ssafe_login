@@ -4,7 +4,8 @@
     "paths": {
       "@pages/*": ["src/pages/*"],
       "@/*": ["src/*"],
-      "@common/*": ["src/common/*"]
+      "@common/*": ["src/common/*"],
+      "@utils/*": ["src/utils/*"]
     },
     "jsx": "preserve",
     "esModuleInterop": true
