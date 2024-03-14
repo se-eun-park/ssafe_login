@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { removeCookie } from '@common/Cookie';
+import { removeCookie } from '@/utils/Cookie';
 
 const HomePage = () => {
   /** Logout */

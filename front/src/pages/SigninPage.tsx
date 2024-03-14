@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import AxiosCookie from '@common/AxiosCookie';
-import { setCookie } from '@common/Cookie';
+import AxiosCookie from '@/utils/AxiosCookie';
+import { setCookie } from '@/utils/Cookie';
 import { useNavigate } from 'react-router-dom';
 
 const SigninPage = () => {

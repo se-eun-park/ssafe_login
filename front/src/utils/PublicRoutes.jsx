@@ -1,5 +1,5 @@
 import React from 'react';
-import { getCookie } from '@common/Cookie';
+import { getCookie } from '@utils/Cookie';
 import { Outlet, Navigate } from 'react-router-dom';
 
 const PublicRoutes = () => {

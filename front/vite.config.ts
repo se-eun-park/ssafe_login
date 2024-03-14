@@ -9,7 +9,6 @@ export default defineConfig({
     alias: [
       { find: '@pages', replacement: '/src/pages' },
       { find: '@utils', replacement: '/src/utils' },
-      { find: '@common', replacement: '/src/common' },
       { find: '@', replacement: '/src' },
     ],
   },
