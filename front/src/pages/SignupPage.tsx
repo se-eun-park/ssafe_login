@@ -9,6 +9,10 @@ interface FormInputs {
   passwordCheck: string;
 }
 
+// 유효성 검사
+const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#])[\da-zA-Z!@#]{8,16}$/;
+
 const SignupPage = () => {
   const navigate = useNavigate();
 
@@ -18,10 +22,6 @@ const SignupPage = () => {
     handleSubmit,
     getValues,
   } = useForm<FormInputs>({ mode: 'onChange' });
-
-  // 유효성 검사
-  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#])[\da-zA-Z!@#]{8,16}$/;
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     const response = await axios.post('http://localhost:8000/auth/signup', {
@@ -103,10 +103,7 @@ const SignupPage = () => {
             />
             {errors.passwordCheck && <p className="errorMessage">{errors.passwordCheck.message}</p>}
           </div>
-          <button
-            type="submit"
-            disabled={!isValid || isSubmitting}
-            className="button">
+          <button type="submit" disabled={!isValid || isSubmitting} className="button">
             회원가입
           </button>
         </div>
