@@ -15,7 +15,7 @@ const SigninPage = () => {
     });
   };
 
-  const clickBtnLogin = async () => {
+  const createProduct = async () => {
     const config = {
       method: 'post',
       url: 'http://localhost:8000/auth/login',
@@ -53,7 +53,7 @@ const SigninPage = () => {
           />
         </div>
 
-        <button className="button" onClick={clickBtnLogin}>
+        <button className="button" onClick={createProduct}>
           로그인
         </button>
       </div>
